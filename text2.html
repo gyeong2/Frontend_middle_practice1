@@ -1,0 +1,63 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; width: 400px;
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; }
+    div#app div { margin-bottom: 20px; }
+    label { display: block; }
+    input[type=text] { padding: 8px; }
+    button { width: 100px; height: 30px; margin: 5px; }
+    table { border-collapse: collapse; margin: 5px; width: 300px; }
+    thead { background-color: #d8d8d8e8;}
+    
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>test2</h1>
+    <hr />
+    <div>
+    <table border="1">
+        <thead>
+            <tr>
+             <td>no</td>
+             <td>title</td>
+             </tr>
+        </thead>
+        <tbody>
+            <tr>
+             <td>1</td>
+             <td>우유</td>
+             </tr>
+        </tbody>
+    </table>
+    </div>
+    <div>
+      <input type="text" v-model="productno" />
+    </div>
+    <div>
+      <input type="text" v-model="producttitle" />
+    </div>
+    <button type="button" v-on:click="add">추가</button>
+  </div>
+
+  <script type="text/javascript">
+    let app = {
+      data() {
+        return {
+          productno: '', 
+          producttitle: ''
+        };
+      },
+      methods: {
+        add() {
+            push({productno:"",producttitle:""});
+        }
+      }
+    };
+    Vue.createApp(app).mount("#app");
+  </script>
+</body>
+</html>
